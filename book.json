@@ -1,0 +1,15 @@
+{
+    "title": "Chinphy's Tour",
+    "author": "Chinphy",
+    "description": "study tour",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "plugins": [
+        "github"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://github.com/chinphy"
+        }
+    }
+}

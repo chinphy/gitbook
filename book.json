@@ -5,11 +5,19 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "plugins": [
-        "github"
+        "github",
+        "splitter",
+        "tbfed-pagefooter",
+        "toggle-chapters"
     ],
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/chinphy"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"Copyright © chinphy.com 2019",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
     }
 }

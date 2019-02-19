@@ -76,6 +76,9 @@
     {
         private static $instance;
         
+        /**
+        * 通过懒加载获得实例（在第一次使用的时候创建）
+        */
         public static function getInstance()
         {
             if (null === static::$instance){

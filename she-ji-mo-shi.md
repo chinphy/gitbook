@@ -6,22 +6,22 @@
 所以使用工厂类或者工厂方法生成对象，而不是在代码中直接new。【工厂模式->服务容器 了解一哈】
 
 ```PHP
-class A()
-{
-    //TODO
-}
-
-class Factory()
-{
-    public static function createA()
+    class A()
     {
-        $a = new A();
-        return $a
+        //TODO
     }
-}
-
-$aa = Factory::createA();
-//TODO
+    
+    class Factory()
+    {
+        public static function createA()
+        {
+            $a = new A();
+            return $a
+        }
+    }
+    
+    $aa = Factory::createA();
+    //TODO
    
 ```
 

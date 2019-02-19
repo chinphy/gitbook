@@ -19,6 +19,9 @@ class Factory()
         return $a
     }
 }
+
+$aa= Factory::createA();
+//TODO
    
 ```
 

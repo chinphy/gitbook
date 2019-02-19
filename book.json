@@ -6,6 +6,8 @@
     "gitbook": "3.2.3",
     "plugins": [
         "-highlight",
+        "-theme-default"
+        "theme-comscore",
         "github",
         "splitter",
         "tbfed-pagefooter",

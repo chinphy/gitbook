@@ -6,7 +6,6 @@
 所以使用工厂类或者工厂方法生成对象，而不是在代码中直接new。【工厂模式->服务容器 了解一哈】
 
 ```php
-
     /**
     * 类
     */
@@ -20,15 +19,19 @@
     */
     class Factory()
     {
-        // 创建方法
-        public static function createA()
+        /**
+        * 创建方法
+        */
+        public static function createA(): A
         {
             $a = new A();
             return $a;
         }
     }
     
-    // 创建
+    /**
+    * 创建
+    */
     $aa = Factory::createA();
     
     // TODO
@@ -38,8 +41,9 @@
 控制反转（IoC）的实现，当一个类调用另一个类时，对象通过参数在需要的地方注入，提高扩展性。
 
 ```php
-
-    // 被调用的类
+    /**
+    * 被调用的类
+    */
     class A()
     {
         private $tag;
@@ -50,7 +54,9 @@
         }
     }
     
-    // 调用
+    /**
+    * 调用
+    */
     class B()
     {
         private $a;
@@ -61,7 +67,9 @@
         }
     }
     
-    // 测试
+    /**
+    * 测试
+    */
     class Test()
     {
         $a1 = new A('aa');
@@ -83,7 +91,7 @@
         /**
         * 通过懒加载获得实例（在第一次使用的时候创建）
         */
-        public static function getInstance()
+        public static function getInstance(): Singleton
         {
             if (null === static::$instance){
                 static::$instance = new static();

@@ -5,6 +5,7 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "plugins": [
+        "-highlight",
         "github",
         "splitter",
         "tbfed-pagefooter",

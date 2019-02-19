@@ -1,9 +1,11 @@
 # 设计模式
+
 #### 提高代码复用率、可维护性
 
 ## 工厂模式
-当修改一个类的名字或者方法之后，在调用这个类的所有的代码都要修改，维护性太低。
-所以使用工厂类或者工厂方法生成对象，而不是在代码中直接new。【工厂模式->服务容器 了解一哈】
+
+当修改一个类的名字或者方法之后，在调用这个类的所有的代码都要修改，维护性太低。  
+所以使用工厂类或者工厂方法生成对象，而不是在代码中直接new。【工厂模式-&gt;服务容器 了解一哈】
 
 ```php
     /**
@@ -13,7 +15,7 @@
     {
         // TODO
     }
-    
+
     /**
     * 工厂类
     */
@@ -28,16 +30,17 @@
             return $a;
         }
     }
-    
+
     /**
     * 创建
     */
     $aa = Factory::createA();
-    
+
     // TODO
-   
 ```
+
 ## 依赖注入模式
+
 控制反转（IoC）的实现，当一个类调用另一个类时，对象通过参数在需要的地方注入，提高扩展性。
 
 ```php
@@ -47,26 +50,26 @@
     class A()
     {
         private $tag;
-        
+
         public function __construct(string $tag)
         {
             $this->tag = $tag;
         }
     }
-    
+
     /**
     * 调用
     */
     class B()
     {
         private $a;
-        
+
         public function __construct(A $a)
         {
             $this->a = $a
         }
     }
-    
+
     /**
     * 测试
     */
@@ -74,20 +77,21 @@
     {
         $a1 = new A('aa');
         $b1 = new B($a1);
-        
+
         // TODO
     }
-
 ```
 
 ## 单例模式
-在应用程序调用的时候，只能获得一个对象实例。
+
+在应用程序调用的时候，只能获得一个对象实例。  
 例如，数据库连接，OSS对象创建等
+
 ```php
     class Singleton()
     {
         private static $instance;
-        
+
         /**
         * 通过懒加载获得实例（在第一次使用的时候创建）
         */
@@ -96,10 +100,10 @@
             if (null === static::$instance){
                 static::$instance = new static();
             }
-            
+
             return static::$instance;
         }
-        
+
         /**
         * 不允许从外部调用以防止创建多个实例
         * 要使用单例，必须通过 Singleton::getInstance() 方法获取实例
@@ -107,14 +111,14 @@
         private function __construct()
         {
         }
-        
+
         /**
         * 防止实例被克隆（这会创建实例的副本）
         */
         private function __clone()
         {
         }
-        
+
         /**
         * 防止反序列化（这将创建它的副本）
         */
@@ -124,12 +128,14 @@
     }
 ```
 
-
 ## 适配器模式
-## 策略模式
+将一个类的接口转换成可应用的兼容接口。适配器使原本由于接口不兼容而不能一起工作的那些类可以一起工作。
+
+
 ## 观察者模式
-当对象的状态发生变化时，所有依赖于它的对象都得到通知并被自动更新。它使用的是低耦合的方式，非侵入式的通知与更新机制。
-场景:一个事件发生后，要执行一连串更新操作。传统的编程方式，就是在事件的代码之后直接加入处理的逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件的主体代码。 
+
+当对象的状态发生变化时，所有依赖于它的对象都得到通知并被自动更新。它使用的是低耦合的方式，非侵入式的通知与更新机制。  
+场景:一个事件发生后，要执行一连串更新操作。传统的编程方式，就是在事件的代码之后直接加入处理的逻辑。当更新的逻辑增多之后，代码会变得难以维护。这种方式是耦合的，侵入式的，增加新的逻辑需要修改事件的主体代码。
 
 PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和 SplSubject。
 
@@ -141,18 +147,18 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
     class User implements \SplSubject
     {
         private $email;
-    
+
         /**
         * 观察者列表
         * @var \SplObjectStorage 
         */
         private $observers;
-    
+
         public function __construct()
         {
             $this->observers = new \SplObjectStorage();
         }
-    
+
         /**
         * 加入观察者列表
         * @var \SplObjectStorage 
@@ -161,7 +167,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
         {
             $this->observers->attach($observer);
         }
-    
+
         /**
         * 移除观察者列表
         * @var \SplObjectStorage 
@@ -170,7 +176,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
         {
             $this->observers->detach($observer);
         }
-    
+
         /**
         * 发生的更新事件
         */
@@ -179,7 +185,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
             $this->email = $email;
             $this->notify();
         }
-    
+
         /**
         * 通知观察者做出更新
         */
@@ -191,7 +197,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
             }
         }
     }
-    
+
     /**
     * 观察者
     */
@@ -201,7 +207,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
         * @var User[]
         */
         private $changedUsers = [];
-    
+
         /**
         * 它通常使用  SplSubject::notify()  通知主体
         *
@@ -211,7 +217,7 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
         {
             $this->changedUsers[] = clone $subject;
         }
-    
+
         /**
         * @return User[]
         */
@@ -219,18 +225,19 @@ PHP 已经定义了2个接口用于快速实现观察者模式：SplObserver 和
         {
             return $this->changedUsers;
         }
-        
+
     }
-    
+
     /**
     * 测试
     */
-    $user = new User();
     $ob = new UserObserver();
+    $user = new User();
+    
     $user->attach($ob)
     $user->changeEmail('c@gmail.com');
+    
     var_dump($ob->getChangedUsers());
 ```
 
-## 装饰器模式
 

@@ -8,7 +8,8 @@
         "github",
         "splitter",
         "tbfed-pagefooter",
-        "toggle-chapters"
+        "toggle-chapters",
+        "prism"
     ],
     "pluginsConfig": {
         "github": {

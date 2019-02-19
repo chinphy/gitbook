@@ -20,7 +20,7 @@ class Factory()
     }
 }
 
-$aa= Factory::createA();
+$aa = Factory::createA();
 //TODO
    
 ```

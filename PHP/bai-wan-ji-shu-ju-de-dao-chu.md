@@ -132,7 +132,10 @@
                 fclose($fp);
             }
         }
-
+        
+        //断开连接
+        mysqli_close($con);
+        
         //进行多个文件压缩
         $zip = new \ZipArchive();
         $filename = "info.zip";

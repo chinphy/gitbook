@@ -5,6 +5,7 @@
   * [swoole](PHP/README.md)
     * [初识](PHP/README.md)
   * [百万级数据的导出](PHP/bai-wan-ji-shu-ju-de-dao-chu.md)
+  * [PHP位运算的使用](PHP/phpwei-yun-suan-de-shi-yong.md)
 * [Go](go/README.md)
   * [Ubuntu18.04下安装Go](go/ubuntu-18.04-install-go.md)
 * [Markdown语法](markdownyu-fa.md)

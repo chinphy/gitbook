@@ -3,20 +3,23 @@
 ```php
     public function output()
     {
+        // 耗时较长，解除执行时间限制
         set_time_limit(0);
+        // 内存限制，依情况设置
         ini_set('memory_limit', '128M');
 
+        // 响应头
         $fileName = date('YmdHis', time());
         header('Content-Encoding: UTF-8');
         header("Content-type:application/vnd.ms-excel;charset=UTF-8");
         header('Content-Disposition: attachment;filename="' . $fileName . '.csv"');
 
 
-        //打开php标准输出流
-        //以写入追加的方式打开
+        // 打开php标准输出流
+        // 以写入追加的方式打开
         $fp = fopen('php://output', 'a');
 
-        //连接数据库
+        // 连接数据库
         $dbhost = '127.0.0.1';
         $dbuser = 'root';
         $dbpwd = 'root';
@@ -24,31 +27,32 @@
         if (mysqli_connect_errno()) {
             die('connect error');
         }
-        //选择数据库
+        // 选择数据库
         $database = 'test';
         mysqli_select_db($con, $database);
-        //设置编码
+        // 设置编码
         mysqli_query($con, "set names UTF8");
 
 
-        //用fputcsv从数据库中导出1百万的数据
-        //每次取1万条数据，分100步来执行
-        //如果线上环境无法支持一次性读取1万条数据，可把$nums调小，$step相应增大。
+        // 用fputcsv从数据库中导出1百万的数据
+        // 每次取1万条数据，分100步来执行
+        // 如果线上环境无法支持一次性读取1万条数据，可把$nums调小，$step相应增大。
         $step = 100;
         $nums = 10000;
-        $where = ""; //筛选条件
+        $where = "";
 
-        //设置标题
+        // 设置标题
         $title = array('ID','姓名','年龄','性别');
         foreach($title as $key => $item) {
             $title[$key] =iconv("UTF-8", "GBK", $item);
         }
-        //将标题写到标准输出中
+        // 将标题写到标准输出中
         fputcsv($fp, $title);
 
         for($s = 1; $s <= $step; $s++) {
             $start = ($s - 1) * $nums;
-            $result = mysqli_query($con,"SELECT * FROM `test` ".$where." ORDER BY `id` LIMIT {$start},{$nums}");
+            $result = mysqli_query($con,
+                                    "SELECT * FROM `test` ".$where." ORDER BY `id` LIMIT {$start},{$nums}");
             if($result) {
                 while($row = mysqli_fetch_assoc($result)) {
                     foreach($row as $key => $item) {

@@ -12,5 +12,4 @@
   * [随机查询10条数据](MySQL/sui-ji-cha-xun-10-tiao-shu-ju.md)
 * [Markdown语法](markdownyu-fa.md)
 * [设计模式](she-ji-mo-shi.md)
-* [观影清单](guan-ying-qing-dan.md)
 

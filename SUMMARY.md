@@ -10,6 +10,8 @@
   * [Ubuntu18.04下安装Go](go/ubuntu-18.04-install-go.md)
 * [MySQL](MySQL/README.md)
   * [随机查询10条数据](MySQL/sui-ji-cha-xun-10-tiao-shu-ju.md)
+* [日常](richang/README.md)
+  * [观影清单](richang/guan-ying-qing-dan.md.md)
 * [Markdown语法](markdownyu-fa.md)
 * [设计模式](she-ji-mo-shi.md)
 

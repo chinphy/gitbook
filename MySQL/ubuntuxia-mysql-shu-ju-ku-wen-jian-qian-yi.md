@@ -36,6 +36,8 @@
      ```
  
   3. 重启服务
+  
+  
     ```bash
       sudo service apparmor restart
       sudo service mysql start

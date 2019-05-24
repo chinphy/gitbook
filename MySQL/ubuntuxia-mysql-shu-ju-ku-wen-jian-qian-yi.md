@@ -26,14 +26,17 @@
         找到datadir 改为新的datadir
      
      b. /etc/apparmor.d/usr.sbin.mysqld
-         找到
          
- ```bash
-  /var/lib/mysql/ r,
-  /var/lib/mysql/** rwk,
-```
          
-         改成新的data_dir
+         
+  ```bash
+   # 找到
+   /var/lib/mysql/ r,
+   /var/lib/mysql/** rwk,
+   # 改成新的data_dir
+
+ ```
+ 
   3. 重启服务
 
     ```bash

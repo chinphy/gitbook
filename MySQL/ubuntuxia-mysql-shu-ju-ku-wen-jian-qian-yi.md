@@ -29,8 +29,8 @@
          找到
          
  ```bash
-           /var/lib/mysql/ r,
-           /var/lib/mysql/** rwk,
+  /var/lib/mysql/ r,
+  /var/lib/mysql/** rwk,
 ```
          
          改成新的data_dir

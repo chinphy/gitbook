@@ -27,8 +27,6 @@
      
      b. /etc/apparmor.d/usr.sbin.mysqld
          
-         
-         
      ```bash
       # 找到
       /var/lib/mysql/ r,

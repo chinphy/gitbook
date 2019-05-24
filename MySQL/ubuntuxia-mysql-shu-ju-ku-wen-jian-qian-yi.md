@@ -28,10 +28,10 @@
      b. /etc/apparmor.d/usr.sbin.mysqld
          找到
          
-         ```bash
+ ```bash
            /var/lib/mysql/ r,
            /var/lib/mysql/** rwk,
-         ```
+```
          
          改成新的data_dir
   3. 重启服务

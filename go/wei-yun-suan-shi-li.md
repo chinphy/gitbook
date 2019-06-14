@@ -28,8 +28,8 @@ func main() {
     y := 2
 
     x = x ^ y   // （1）
-    y = x ^ y   // （2）
-    x = x ^ y   // （3）
+    y = x ^ y   // （2） x ^ y ^ y
+    x = x ^ y   // （3） x ^ y ^ x ^ y ^ y
 
     fmt.Println("x->", x)
     fmt.Println("y->", y)

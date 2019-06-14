@@ -1,4 +1,6 @@
 ### m的n次方
+
+
 ```go
     func main() {
         res := 1
@@ -11,7 +13,6 @@
 	    m *= m
 	    n = n >> 1
 	}
-	
 	fmt.Println(res)
     }
 ```

@@ -22,6 +22,7 @@ func main() {
 
 
 ```go
+
 func main() {
     x := 1
     y := 2

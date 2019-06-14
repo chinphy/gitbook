@@ -22,6 +22,15 @@ func main() {
 
 
 ```go
+func main() {
+    x := 1
+    y := 2
 
+    x = x ^ y   // （1）
+    y = x ^ y   // （2）
+    x = x ^ y   // （3）
 
+    fmt.Println("x->", x)
+    fmt.Println("y->", y)
+}
 ```

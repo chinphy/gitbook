@@ -8,6 +8,7 @@
   * [PHP位运算的使用](PHP/phpwei-yun-suan-de-shi-yong.md)
 * [Go](go/README.md)
   * [Ubuntu18.04下安装Go](go/ubuntu-18.04-install-go.md)
+  * [位运算示例](go/wei-yun-suan-shi-li.md)
 * [MySQL](MySQL/README.md)
   * [随机查询10条数据](MySQL/sui-ji-cha-xun-10-tiao-shu-ju.md)
   * [Ubuntu下MySQL数据库文件迁移](MySQL/ubuntuxia-mysql-shu-ju-ku-wen-jian-qian-yi.md)
